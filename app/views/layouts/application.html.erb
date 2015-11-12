@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title>Mywallet</title>
+	  <%= stylesheet_link_tag    'application', media: 'all' %>
+	  <%= javascript_include_tag 'application' %>
+	  <%= csrf_meta_tags %>
+	</head>
+
+	<body>
+		<div id="flash">
+			<%= flash[:notice] if flash[:notice] %>
+		</div>
+
+		<div id="alert">
+			<%= flash[:alert] if flash[:alert] %>
+		</div>
+
+		<div id="container">
+			<header>
+				<div id="title">
+				<% if current_user %>
+					<%= current_user.fname %>
+				<% else %>
+					Hello Guest!
+				<% end %>
+					<h3>Wallet App</h3>
+				</div>
+
+			</header>
+
+			<div id="content">
+				<%= yield %>
+			</div>
+
+		</div>
+	</body>
+</html>

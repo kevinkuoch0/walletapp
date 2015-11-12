@@ -1,0 +1,23 @@
+<%= form_for @card do |d| %>
+	
+	<%= d.label :cardnumber, "Card Number" %>
+    <%= d.text_field :cardnumber, :required => true %>
+    <br />
+    <br />
+    <%= d.label :expmonth, "Expiration Month" %>
+    <%= d.number_field :expmonth, :required => true %> 
+    <br />
+    <br />
+    <%= d.label :expyear, "Expiration Year" %>
+    <%= d.number_field :expyear, :required => true %> 
+    <br />
+    <br />
+    <%= d.label :balance, "Balance" %>
+    <%= d.number_field :balance, :step => 'any' %> 
+    <br />
+    <br />
+    <%= d.submit %>
+
+    <% end %>
+</div>
+  
