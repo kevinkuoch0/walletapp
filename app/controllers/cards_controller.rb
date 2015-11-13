@@ -20,7 +20,7 @@ class CardsController < ApplicationController
 		@card = Card.new(cardparams.merge(card_owner_id: current_user.id))
 		if @card.save
 			current_user.cards << @card
-			redirect_to user_path(current_user.id),
+			redirect_to user_path(current_user.id)
 			flash[:notice] = "Card has been saved!"
 		else
 			flash[:alert] = "Card was not saved successfully."
@@ -57,7 +57,7 @@ class CardsController < ApplicationController
   	end
 
   	def destroy
-    	@card = Card.find(params[:id])
+    	@card = Card.find(params[:id])  	
    	 	if @card.destroy
 	      redirect_to root_path, notice: "Card deleted."
 	    else

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
  root 'home#homepage'
+
  resources :users
  resources :cards
 
@@ -11,7 +12,8 @@ Rails.application.routes.draw do
   delete '/cards/:id/remove', to: 'cards#remove', as: 'remove_card'
 
   post '/signin', to: 'sessions#create'
-  delete '/signout', to: 'sessions#destroy'
+  delete '/signout' => 'sessions#destroy'
+  
 
 
 

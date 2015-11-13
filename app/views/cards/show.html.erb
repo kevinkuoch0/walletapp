@@ -9,6 +9,7 @@
                                 $0.00
                             <% end %></h2>
 <br />
+
 <% if @card.card_owner_id == current_user.id %>
     <h3>Share this card with another user by entering the user's email here:</h3>
     <%= form_tag(share_card_path(@card.id), method: :post) do %>

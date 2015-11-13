@@ -1,6 +1,10 @@
 class User < ActiveRecord::Base
 
-validates_presence_of :email, :password, :fname, :lname
+validates_presence_of :email, :fname, :lname
+
+has_secure_password
+
+validates_presence_of :password, on: :create
 
 validates :email, uniqueness: true
 
